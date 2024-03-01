@@ -63,8 +63,10 @@ app.get('/api/persons/:id', (request, response) => {
 })
 
 app.delete('/api/persons/:id', (request, response) => {
+    console.log(request)
     Person.findByIdAndDelete(request.params.id)
         .then(result => {
+            console.log(response)
             response.status(204).end()
         })
 })
